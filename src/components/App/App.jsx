@@ -43,9 +43,10 @@ class App extends Component {
   filteredContactList = () => {
     const { filterText, contacts } = this.state;
     const normilizedValue = filterText.toLowerCase().trim();
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normilizedValue)
-    );
+    return contacts
+      .filter(contact =>
+        contact.name.toLowerCase().includes(normilizedValue))
+      .sort((a, b) => a.name.localeCompare(b.name));
   };
 
   changeFilter = (e) => { 
