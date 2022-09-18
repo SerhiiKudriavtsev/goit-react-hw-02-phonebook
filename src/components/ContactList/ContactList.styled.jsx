@@ -11,9 +11,9 @@ export const ListItem = styled.li`
   :nth-of-type(odd) {
     background-color: #F5F5F5;
   }
-  :nth-of-type(even) {
-    background-color: #FFFAFA;
-  }
+  // :nth-of-type(even) {
+  //   background-color: #FFFAFA;
+  // }
 `;
 export const Name = styled.p`
   width: 45%;

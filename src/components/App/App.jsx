@@ -13,7 +13,7 @@ class App extends Component {
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
-    filter: '',
+    filterText: '',
   }
 
   formSubmitHandler = ({name, number}) => { 
@@ -41,31 +41,33 @@ class App extends Component {
   };
 
   filteredContactList = () => {
-    const { filter, contacts } = this.state;
-    const normilizedValue = filter.toLowerCase().trim();
+    const { filterText, contacts } = this.state;
+    const normilizedValue = filterText.toLowerCase().trim();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normilizedValue)
     );
   };
 
   changeFilter = (e) => { 
-    this.setState({ filter: e.currentTarget.value });
+    console.log(e.currentTarget.value)
+    this.setState({ filterText: e.currentTarget.value });
   }
 
   render() { 
-    const {contacts, filter} = this.state;
+    const { contacts, filterText } = this.state;
+    const filteredContacts = this.filteredContactList();
     return (
       <Div>
         <Title>Phonebook</Title>
         <ContactForm onSubmitForm={this.formSubmitHandler} />
         
         <Title>Contacts</Title>
-        {contacts[0] ?
-          (<ContactFilter
-          value={filter}
+        <ContactFilter
+          value={filterText}
           onChange={this.changeFilter}
-        />) : (<Text>Contact not found</Text>)
-        }
+        />
+        {contacts[0] && !filteredContacts[0] &&
+        (<Text>Contact not found</Text>)}
         
         {contacts[0] ? (
           <ContactList

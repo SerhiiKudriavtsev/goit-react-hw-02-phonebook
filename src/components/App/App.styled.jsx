@@ -9,4 +9,7 @@ export const Div = styled.div`
 export const Title = styled.h2`
   margin-bottom: 10px;
 `;
-export const Text = styled.p``;
+export const Text = styled.p`
+font-size: 18px;
+color: red;
+`;
