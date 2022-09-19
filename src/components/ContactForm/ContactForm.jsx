@@ -70,6 +70,7 @@ class ContactForm extends Component {
 ContactForm.propTypes = {
   name: PropTypes.string,
   number: PropTypes.string,
+  onSubmitForm: PropTypes.func.isRequired,
 }
 
 export default ContactForm;

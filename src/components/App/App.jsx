@@ -72,7 +72,7 @@ class App extends Component {
         
         {contacts[0] ? (
           <ContactList
-          contacts={this.filteredContactList()}
+          contacts={filteredContacts}
           onDeleleButton={this.deleteContact}
         />
         ) : (<Text>Contact list is empty</Text>)
