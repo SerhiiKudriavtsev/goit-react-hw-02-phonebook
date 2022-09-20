@@ -75,11 +75,8 @@ class App extends Component {
           contacts={filteredContacts}
           onDeleleButton={this.deleteContact}
         />
-        ) : (<Text>Contact list is empty</Text>)
-          
+        ) : (<Text>Contact list is empty</Text>)  
         }
-        
-
       </Div>
   );
   }  
